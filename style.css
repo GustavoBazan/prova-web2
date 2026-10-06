@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    --light: #FFFFFF;
+    --font-title: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --font-text: "Inter", Arial, sans-serif;
+
+    --paper: #FFFFFF;
+    --ink: #181A2A;
+    --slate: #6B7280;
+    --mist: #F3F4F6;
+    --line: #E5E7EB;
+    --accent: #6D28D9;
+    --price: #059669;
+    --star: #F59E0B;
+
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-text);
+    background-color: var(--paper);
+    color: var(--ink);
+}
+
+h1 {
+    font-family: var(--font-title);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 200px 20px 200px;
+    background-color: var(--mist);
+    border-bottom: 1px solid var(--line);
+}
+
+header .top {
+    display: flex;
+    gap: 10px;
+    background-color: var(--ink);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 5px 200px 5px 200px;
+    color: var(--light);
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--ink);
+    margin-left: 30px;
+}
+
+header nav a:hover {
+    color: var(--accent);   
+}
+
+header nav a:focus-visible {
+    color: var(--accent);
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 200px 20px 200px;
+}
+
+main .first-section {
+    display: flex;
+    flex-direction: row;
+}
+
+main .featured {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+    border-radius: 20px;
+    flex-direction: row;
+}
+
+main .featured .featured-panel {
+    width: 100%;
+    display: flex;
+    border-radius: 20px;
+    margin-right: -20px;
+    z-index: 3;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ink);
+    padding: 0 0 0 60px;
+}
+
+main .featured .featured-panel h2{
+    color: var(--star);
+    font-size: 16px;
+}
+
+main .featured .featured-panel h1{
+    color: var(--paper);
+    font-size: 50px;
+}
+
+main .featured .featured-panel p{
+    margin: 20px 0 20px 0;
+    color: var(--mist);
+    font-size: 20px;
+}
+
+main .featured .featured-panel button{
+    color: var(--paper);
+    background-color: var(--accent);
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+}
+
+main .featured .featured-panel-mid {
+    width: 10%;
+    display: flex;
+    margin-right: -20px;
+    z-index: 3;
+    
+    background-color: var(--ink);
+}
+
+
+main .featured img {
+    z-index: 2;
+    width: 80%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--ink);
+    
+}
+
+main .second-section {
+    margin: 30px 0 0 0;
+}
+main .second-section h1 {
+    margin: 0 0 20px 0;
+}
+
+main .second-section .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main .second-section .content .content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 33%;
+    margin: 0 0 50px 0;
+}
+
+main .second-section .content .news-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    width: 20%;
+    height: 100%;
+    border-radius: 10px;
+    /*padding: 30px 20px 30px 20px;*/
+}
+
+main .second-section .content .news-card:hover {
+    border-color: var(--accent);
+    background-color: var(--mist);
+}
+
+main .second-section .content .news-card p {
+    color: var(--slate);
+}
+
+main .second-section .content .news-card img {
+    width: 100%;
+    height: auto;
+    /*margin-top: 10px;*/
+    border-radius: 10px;
+    align-self: center;
+}
+
+main .second-section .content .news-card .panel {
+    background-color: var(--paper);
+    margin-top: -15px;
+    padding: 10px 10px 10px 10px;
+}
+
+main .second-section .content .news-card .panel-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main .second-section .content .news-card .category {
+    margin: 0px 0 5px 0;
+    color: var(--paper);
+    width: fit-content;
+    padding: 8px 12px 8px 12px;
+    border-radius: 5px;
+    background-color: var(--accent);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+main .second-section .content .news-card h1 {
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+
+main .second-section .content .news-card .price {
+    margin: 0;
+    font-size: 16px;
+    color: var(--ink);
+    text-decoration-line: line-through;
+    list-style:inside;
+}
+
+main .second-section .content .news-card .real-price{
+    color: var(--price);
+    font-size: 22px;
+}
+
+main .second-section .content .news-card .nota {
+    font-size: 20px;
+    color: var(--star);
+}
+
+main .second-section .content .news-card button {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: var(--accent);
+    border: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    color: var(--paper);
+    margin: 20px 0 10px 0;
+    width: 100%;
+
+}
+
+main .second-section .content .read-more {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin: 20px 0 20px 0;
+    padding: 15px 50px 15px 50px;
+    border-radius: 10px;
+    background-color: var(--accent);
+    color: var(--light);
+    border: none;
+    font-family: var(--font-text);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+main .second-section .content .read-more:hover {
+    background-color: var(--slate);
+}
+
+main .second-section .content .read-more:focus-visible {
+    background-color: var(--slate);
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px 200px 20px 200px;
+    background-color: var(--ink);
+    color: var(--light);
+}
+
+footer a{
+    color: var(--light);
+    text-decoration: none;
+    margin: 0 10px 0 0;
+}
+
+footer a:hover{
+    color: var(--accent);
+}
+
+footer a:focus-visible {
+    outline: 2px solid var(--light);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.carrinho-popup {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: none;
+    backdrop-filter: brightness(30%);
+    z-index: 50;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+}
+
+.carrinho-popup .container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--paper);
+    border-radius: 20px;
+    padding: 40px 30px 40px 30px;
+    font-size: 12px;
+}
+
+.carrinho-popup h1{
+    margin-bottom: 10px;
+}
+
+.carrinho-popup p{
+    font-size: 20px;
+}
+
+.carrinho-popup button{
+    background-color: var(--accent);
+    color: var(--paper);
+    border: none;
+    padding: 10px 0 10px 0;
+    margin: 10px 10px 0px 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.carrinho-page {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--accent);
+    color: var(--paper);
+    z-index: 50;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    header,
+    header .top,
+    main,
+    footer {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    header,
+    header .top,
+    main,
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    header nav {
+        flex-direction: column;
+    }
+
+    header .nav-div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 20px;
+        margin-top: 15px;
+    }
+
+    header nav a {
+        margin-left: 0;
+    }
+
+    main .first-section {
+        flex-direction: column;
+    }
+
+    main .second-section .content {
+        height: auto;
+    }
+
+    main .second-section .content .content-row {
+        flex-direction: column;
+        height: auto;
+        margin: 0;
+    }
+
+    main .second-section .content .news-card {
+        width: auto;
+        margin: 0 0 20px 0;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

@@ -184,7 +184,7 @@ main .second-section .content .news-card {
     display: flex;
     flex-direction: column;
     background-color: var(--paper);
-    border: 1px solid var(--line);
+    border: 2px solid var(--line);
     width: 20%;
     height: 100%;
     border-radius: 10px;
@@ -371,10 +371,53 @@ footer a:focus-visible {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--accent);
     color: var(--paper);
     z-index: 50;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.carrinho-page-dark {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: none;
+    backdrop-filter: brightness(30%);
+    color: var(--paper);
+    z-index: 50;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.carrinho-page .container{
+    display: flex;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--paper);
+    color: var(--ink);
+    padding: 15px 30px 15px 30px;
+    z-index: 55;
+}
+
+.carrinho-page .container ul{
+    margin: 10px 0 10px 0;
+}
+
+.carrinho-page .container li{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0  10px 0;
+}
+
+.carrinho-page .container li p{
+    margin: 0 10px 0 10px;
 }
 
 button:hover{

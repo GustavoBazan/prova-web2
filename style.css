@@ -3,7 +3,7 @@
     padding: 0;
 
     --light: #FFFFFF;
-    --font-title: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --font-title: "Space Grotesk", Arial, sans-serif;
     --font-text: "Inter", Arial, sans-serif;
 
     --paper: #FFFFFF;
@@ -21,6 +21,28 @@
     display: none !important;
 }
 
+.escuro {
+    color-scheme: dark;
+}
+
+.escuro * {
+    --paper: #0F1117;
+    --ink: #F3F4F6;
+    --slate: #9CA3AF;
+    --mist: #1C1F2E;
+    --line: #2E3248;
+}
+
+.escuro .top, .escuro .top *,
+.escuro .featured, .escuro .featured *,
+.escuro footer, .escuro footer *,
+.escuro .category, .escuro .add-product, .escuro .read-more {
+    --paper: #FFFFFF;
+    --ink: #181A2A;
+    --slate: #6B7280;
+    --mist: #F3F4F6;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -29,7 +51,7 @@ body {
     color: var(--ink);
 }
 
-h1 {
+h1, h2, h3 {
     font-family: var(--font-title);
 }
 
@@ -62,17 +84,23 @@ header nav {
     margin-top: 30px;
 }
 
-header nav a {
+header nav a, header nav button {
     text-decoration: none;
     color: var(--ink);
     margin-left: 30px;
 }
 
-header nav a:hover {
-    color: var(--accent);   
+header nav button {
+    background: none;
+    border: none;
+    font: inherit;
 }
 
-header nav a:focus-visible {
+header nav a:hover, header nav button:hover {
+    color: var(--accent);
+}
+
+header nav a:focus-visible, header nav button:focus-visible {
     color: var(--accent);
     outline: 2px solid var(--accent);
     outline-offset: 4px;
@@ -117,7 +145,7 @@ main .featured .featured-panel h2{
     font-size: 16px;
 }
 
-main .featured .featured-panel h1{
+main .featured .featured-panel h3{
     color: var(--paper);
     font-size: 50px;
 }
@@ -161,7 +189,7 @@ main .featured img {
 main .second-section {
     margin: 30px 0 0 0;
 }
-main .second-section h1 {
+main .second-section h2 {
     margin: 0 0 20px 0;
 }
 
@@ -217,6 +245,7 @@ main .second-section .content .news-card .panel {
 main .second-section .content .news-card .panel-row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -231,7 +260,7 @@ main .second-section .content .news-card .category {
     font-weight: bold;
 }
 
-main .second-section .content .news-card h1 {
+main .second-section .content .news-card h3 {
     font-size: 20px;
     margin: 10px 0 10px 0;
 }
@@ -332,7 +361,6 @@ footer a:focus-visible {
     background-color: none;
     backdrop-filter: brightness(30%);
     z-index: 50;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
 }
 
 .carrinho-popup .container{
@@ -344,8 +372,9 @@ footer a:focus-visible {
     font-size: 12px;
 }
 
-.carrinho-popup h1{
+.carrinho-popup h2{
     margin-bottom: 10px;
+    font-size: 26px;
 }
 
 .carrinho-popup p{
@@ -354,7 +383,7 @@ footer a:focus-visible {
 
 .carrinho-popup button{
     background-color: var(--accent);
-    color: var(--paper);
+    color: var(--light);
     border: none;
     padding: 10px 0 10px 0;
     margin: 10px 10px 0px 10px;
@@ -373,7 +402,6 @@ footer a:focus-visible {
     height: 100vh;
     color: var(--paper);
     z-index: 50;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .carrinho-page-dark {
@@ -389,7 +417,6 @@ footer a:focus-visible {
     backdrop-filter: brightness(30%);
     color: var(--paper);
     z-index: 50;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .carrinho-page .container{
@@ -397,27 +424,85 @@ footer a:focus-visible {
     position: fixed;
     right: 0;
     top: 0;
+    width: 380px;
     height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
     flex-direction: column;
-    align-items: center;
+    gap: 15px;
     background-color: var(--paper);
     color: var(--ink);
-    padding: 15px 30px 15px 30px;
+    padding: 20px 25px 20px 25px;
     z-index: 55;
 }
 
 .carrinho-page .container ul{
-    margin: 10px 0 10px 0;
+    list-style: none;
 }
 
 .carrinho-page .container li{
     display: flex;
     flex-direction: row;
-    margin: 10px 0  10px 0;
+    align-items: center;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid var(--line);
 }
 
 .carrinho-page .container li p{
     margin: 0 10px 0 10px;
+}
+
+.carrinho-page .container li p:first-of-type{
+    flex: 1;
+}
+
+.carrinho-page .container li input{
+    width: 50px;
+    padding: 5px;
+}
+
+.carrinho-page .container li button{
+    background: none;
+    border: none;
+    font-size: 18px;
+}
+
+#carrinhoTotal {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.carrinho-page .container fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 15px 15px 15px;
+}
+
+.carrinho-page .container .comprar{
+    background-color: var(--accent);
+    color: var(--light);
+    border: none;
+    padding: 12px 0 12px 0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.carrinho-page .container .voltar{
+    background: none;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    padding: 12px 0 12px 0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button {
+    font-family: var(--font-text);
 }
 
 button:hover{
@@ -455,12 +540,38 @@ button:hover{
         margin-top: 15px;
     }
 
-    header nav a {
+    header nav a, header nav button {
         margin-left: 0;
     }
 
     main .first-section {
         flex-direction: column;
+    }
+
+    main .featured {
+        flex-direction: column;
+    }
+
+    main .featured .featured-panel {
+        width: auto;
+        margin: 0 0 -20px 0;
+        padding: 30px 20px 50px 20px;
+    }
+
+    main .featured .featured-panel h3 {
+        font-size: 32px;
+    }
+
+    main .featured .featured-panel-mid {
+        display: none;
+    }
+
+    main .featured img {
+        width: 100%;
+    }
+
+    .carrinho-page .container {
+        width: 100%;
     }
 
     main .second-section .content {
